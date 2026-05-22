@@ -1,0 +1,554 @@
+<index class="html"></index>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Apuntes - Universidad</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <header>
+        <h1>Arquitectura En Computadoras</h1>
+        <p>Temas de todo el semestre</p>
+    </header>
+
+    <!-- Menú de navegación -->
+    <nav>
+        <button class="btn" onclick="mostrarUnidad(1)">Unidad 1</button>
+        <button class="btn" onclick="mostrarUnidad(2)">Unidad 2</button>
+        <button class="btn" onclick="mostrarUnidad(3)">Unidad 3</button>
+        <button class="btn" onclick="mostrarUnidad(4)">Unidad 4</button>
+        <button class="btn" onclick="mostrarUnidad(5)">Practicas</button>
+    </nav>
+
+    <main>
+        <!-- Portada -->
+        <div id="portada" class="unidad activa">
+            <h2>Bienvenido a mis Apuntes</h2>
+            <p>Este sitio contiene materiales organizados por unidades de la materia Arquitectura en Computadoras. Aqui podras encontrar informacion fundamental sobre el diseño y organizacion de los sistemas computacionales, incluyendo temas como la estructura</p>
+            <br>
+            <h3>Contenido del Semestre:</h3>
+            <ul>
+                <li><strong>Unidad 1:</strong> Introducción a la Arquitectura de Computadoras</li>
+                <li><strong>Unidad 2:</strong> Estructura y Funcionamiento del procesador</li>
+                <li><strong>Unidad 3:</strong> Procesadores</li>
+                <li><strong>Unidad 4:</strong> Multiprocesadores</li>
+                <li><strong>Unidad 5:</strong> Practicas</li>
+            </ul>
+        </div>
+
+        <!-- Unidad 1 -->
+        <div id="unidad1" class="unidad">
+            <h2>Unidad 1: Introducción a la Arquitectura de Computadoras</h2>
+
+            <h3>1.1 Modelos de arquitectura en computadoras:</h3>
+            <p>-Es el diseño conceptual y la estructura operacional fundamental de un sistema de computadora. -Es un modelo y una descripción funcional de los requerimientos y las implementaciones de diseño para varias partes de una computadora. Se enfoca
+                especialmente en cómo la Unidad Central de Procesamiento (UCP) trabaja internamente y accede a las direcciones de memoria. Define la forma de seleccionar e interconectar componentes de hardware para crear computadoras según requerimientos
+                de funcionalidad, rendimiento y costo.</p>
+
+            <h3>1.12 Arquitecturas clásicas</h3>
+            <ul>
+                <li>Las arquitecturas clásicas se basan en el modelo de Von Neumann, que consta de:</li>
+                <li>Una unidad central de procesamiento (CPU)</li>
+                <li>Memoria principal</li>
+                <li>buses de comunicacion</li>
+            </ul>
+
+            <h3>1.2 Arquitecturas Segmentadas</h3>
+            <p>Las arquitecturas segmentadas dividen la memoria en segmentos para mejorar la gestión y seguridad de los programas.</p>
+            </p> (pipeline de 5 etapas)</p>
+            <li> Fetch </li>
+            <li> Decode</li>
+            <li> Execute</li>
+            <li> Memory Access</li>
+            <li> Write Back</li>
+
+            <p> (Ventajas)</p>
+            <li> Mayor rendimiento</li>
+            <li> Uso eficiente de recursos</li>
+            <li> Mayor throughput</li>
+
+            <p> (Desventajas)</p>
+            <li> Complejidad en la gestión de segmentos</li>
+            <li> Riesgos de dependencias</li>
+            <li> Mayor consumo energetico</li>
+
+            <h3>1.3 Arquitecturas de Multiprocesamiento</h3>
+            <p> Estas arquitecturas utilizan multiples procesadores para ejecutar tareas en paralelo:</p>
+            <img src="dos.png" alt="Logo de Java" width="800" height="300">
+            <img src="tres.jpg.png" alt="Logo de Java" width="800" height="500">
+            <button class="btn btn-volver" onclick="mostrarPortada()">Volver al Menú</button>
+        </div>
+
+        <!-- Unidad 2 -->
+        <div id="unidad2" class="unidad">
+            <h2>Unidad 2: Estructura y funcionamiento</h2>
+
+            <h3>2.1 Registros visibles para el usuario</h3>
+            <p>Los registros visibles para el usuario son aquellos que pueden ser utilizados directamente mediante instrucciones del lenguaje máquina. Estos registros permiten almacenar datos temporales, resultados intermedios y direcciones necesarias para
+                la ejecución de programas.</p>
+
+            <h4>Tipos de registros visibles</h4>
+            <ul>
+                <li><strong>Registros de uso general:</strong> Se utilizan para guardar datos temporales o resultados de operaciones realizadas por el procesador. Son fundamentales para ejecutar cálculos rápidos dentro de la CPU.</li>
+                <li><strong>Registros de datos:</strong> Almacenan valores específicos que serán utilizados durante operaciones aritméticas o lógicas.</li>
+                <li><strong>Registros de direcciones:</strong> Guardan direcciones de memoria que permiten localizar datos o instrucciones dentro de la memoria principal.</li>
+                <li><strong>Registros de códigos de condición:</strong> También conocidos como flags, indican el resultado de las operaciones ejecutadas por la ALU, por ejemplo:
+                    <ul>
+                        <li>Si el resultado fue cero.</li>
+                        <li>Si el resultado fue negativo.</li>
+                        <li>Si ocurrió un desbordamiento.</li>
+                    </ul>
+                    Estos registros ayudan al procesador a tomar decisiones durante la ejecución de programas.</li>
+            </ul>
+
+            <h3>2.2.2 Registros de control y de estados</h3>
+            <p>Los registros de control son estructuras internas de la CPU utilizadas para coordinar y supervisar el funcionamiento del procesador. No son visibles para el usuario común y generalmente son utilizados por el sistema operativo y programas privilegiados.</p>
+
+            <h4>Registros de control principales</h4>
+            <ul>
+                <li><strong>Contador de Programa (PC):</strong> Contiene la dirección de la siguiente instrucción que será ejecutada por el procesador.</li>
+                <li><strong>Registro de Instrucción (IR):</strong> Guarda temporalmente la instrucción actual que está siendo procesada.</li>
+                <li><strong>Registro de Dirección de Memoria (MAR):</strong> Almacena la dirección de memoria donde se realizará una lectura o escritura.</li>
+                <li><strong>Registro Intermedio de Memoria (MBR/MDR):</strong> Guarda los datos que fueron leídos de memoria o los que serán enviados hacia ella.</li>
+            </ul>
+
+            <h4>Registros de estado</h4>
+            <p>Los registros de estado almacenan información relacionada con el resultado de las operaciones ejecutadas por la CPU. Utilizan bits llamados flags para indicar diferentes condiciones del sistema.</p>
+
+            <h4>Ejemplos de flags</h4>
+            <ul>
+                <li><strong>S (Signo):</strong> Indica si el resultado es positivo o negativo.</li>
+                <li><strong>Z (Zero):</strong> Señala si el resultado de una operación fue cero.</li>
+                <li><strong>AC (Auxiliary Carry):</strong> Detecta acarreo en operaciones internas.</li>
+                <li><strong>P (Parity):</strong> Indica si el número de bits en 1 es par o impar.</li>
+                <li><strong>CY (Carry):</strong> Señala si hubo acarreo en operaciones aritméticas.</li>
+            </ul>
+
+            <h3>2.2.3 Ejemplos de organización de registros de CPU reales</h3>
+            <p>Las CPU modernas utilizan diferentes tipos de registros para optimizar el rendimiento y acelerar la ejecución de instrucciones. Estos registros trabajan junto con la Unidad de Control y la ALU para coordinar el procesamiento de datos.</p>
+
+            <h4>Ejemplo en procesadores modernos</h4>
+            <p>Procesadores desarrollados por empresas como Intel y AMD integran:</p>
+            <ul>
+                <li>Registros de propósito general.</li>
+                <li>Registros de control.</li>
+                <li>Registros de estado.</li>
+                <li>Memoria caché.</li>
+                <li>Unidades de ejecución paralela.</li>
+            </ul>
+            <p>Gracias a esta organización, los procesadores pueden ejecutar múltiples tareas simultáneamente y mejorar el rendimiento del sistema.</p>
+
+            <h4>Ejemplo de registros usados en la CPU</h4>
+            <ul>
+                <li><strong>AX y BX:</strong> Son registros utilizados para almacenar datos temporales durante operaciones matemáticas y lógicas.</li>
+                <li><strong>PC (Program Counter):</strong> Indica la ubicación de la siguiente instrucción a ejecutar.</li>
+                <li><strong>IR (Instruction Register):</strong> Mantiene almacenada la instrucción actual mientras se procesa.</li>
+                <li><strong>Acumulador:</strong> Registro especializado que almacena resultados intermedios de operaciones realizadas por la ALU.</li>
+            </ul>
+
+            <h4>Importancia de la organización de registros</h4>
+            <p>La correcta organización de registros permite:</p>
+            <ul>
+                <li>Mayor velocidad de procesamiento.</li>
+                <li>Reducción de accesos a memoria.</li>
+                <li>Mejor coordinación entre componentes internos.</li>
+                <li>Ejecución eficiente de instrucciones y programas.</li>
+            </ul>
+            <img src="tres.png" alt="Logo de Java" width="700" height="300">
+
+            <button class="btn btn-volver" onclick="mostrarPortada()">Volver al Menú</button>
+        </div>
+
+        <!-- Unidad 3 -->
+        <div id="unidad3" class="unidad">
+            <h2>Unidad 3: Procesadores</h2>
+
+            <h3>1.0 Chipset</h3>
+            <p>El chipset es un conjunto de circuitos integrados ubicado en la tarjeta madre que se encarga de coordinar la comunicación entre los diferentes componentes de la computadora, como el procesador, la memoria RAM, los dispositivos de almacenamiento
+                y los periféricos.</p>
+
+            <h4>Funciones principales del chipset</h4>
+            <ul>
+                <li>Controlar el flujo de datos entre la CPU y los demás componentes.</li>
+                <li>Administrar la comunicación con dispositivos de entrada y salida.</li>
+                <li>Coordinar el acceso a la memoria y almacenamiento.</li>
+                <li>Mejorar el rendimiento general del sistema.</li>
+            </ul>
+
+            <h4>Tipos de chipset</h4>
+            <ul>
+                <li><strong>Northbridge:</strong> Se encargaba de la comunicación de alta velocidad entre:
+                    <ul>
+                        <li>Procesador</li>
+                        <li>Memoria RAM</li>
+                        <li>Tarjeta gráfica</li>
+                    </ul>
+                </li>
+                <li><strong>Southbridge:</strong> Controlaba dispositivos de menor velocidad como:
+                    <ul>
+                        <li>Puertos USB</li>
+                        <li>Disco duro</li>
+                        <li>Audio</li>
+                        <li>Red</li>
+                    </ul>
+                    Actualmente muchas funciones del Northbridge ya vienen integradas directamente en el procesador.</li>
+            </ul>
+
+            <h3>2. Aplicaciones</h3>
+            <p>Las aplicaciones de hardware y arquitectura de computadoras permiten el funcionamiento correcto de sistemas informáticos en diferentes áreas tecnológicas.</p>
+
+            <h4>Importancia de las aplicaciones</h4>
+            <ul>
+                <li>Facilitan el procesamiento de información.</li>
+                <li>Permiten la comunicación entre dispositivos.</li>
+                <li>Mejoran la automatización de procesos.</li>
+                <li>Incrementan la eficiencia en empresas e industrias.</li>
+            </ul>
+
+            <h3>2.1 Entrada y salida</h3>
+            <p>Los dispositivos de entrada y salida permiten la interacción entre el usuario y la computadora.</p>
+
+            <h4>Dispositivos de entrada</h4>
+            <p>Son aquellos que envían información hacia la computadora.</p>
+            <ul>
+                <li>Teclado</li>
+                <li>Mouse</li>
+                <li>Escáner</li>
+                <li>Micrófono</li>
+                <li>Cámara web</li>
+            </ul>
+
+            <h4>Dispositivos de salida</h4>
+            <p>Son los que muestran o reproducen la información procesada por la computadora.</p>
+            <ul>
+                <li>Monitor</li>
+                <li>Impresora</li>
+                <li>Bocinas</li>
+                <li>Proyector</li>
+            </ul>
+
+            <h4>Dispositivos mixtos</h4>
+            <p>Algunos dispositivos pueden funcionar como entrada y salida.</p>
+            <ul>
+                <li>Pantallas táctiles</li>
+                <li>Memorias USB</li>
+                <li>Discos duros externos</li>
+            </ul>
+
+            <h3>2.2 Almacenamiento</h3>
+            <p>El almacenamiento permite guardar información de manera temporal o permanente dentro de un sistema de cómputo.</p>
+
+            <h4>Tipos de almacenamiento</h4>
+            <ul>
+                <li><strong>Almacenamiento primario:</strong> Es la memoria utilizada directamente por el procesador.
+                    <ul>
+                        <li>Memoria RAM</li>
+                        <li>Memoria caché</li>
+                    </ul>
+                </li>
+                <li><strong>Almacenamiento secundario:</strong> Guarda datos de forma permanente.
+                    <ul>
+                        <li>Disco duro (HDD)</li>
+                        <li>Unidad de estado sólido (SSD)</li>
+                        <li>Memorias USB</li>
+                        <li>Tarjetas SD</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Importancia del almacenamiento</h4>
+            <ul>
+                <li>Conserva archivos y programas.</li>
+                <li>Permite recuperar información rápidamente.</li>
+                <li>Facilita la ejecución de aplicaciones.</li>
+            </ul>
+
+            <h3>2.3 Fuentes de alimentación</h3>
+            <p>La fuente de alimentación es el componente encargado de suministrar energía eléctrica a todos los dispositivos internos de la computadora.</p>
+
+            <h4>Funciones principales</h4>
+            <ul>
+                <li>Convertir corriente alterna (CA) en corriente directa (CD).</li>
+                <li>Distribuir energía a la tarjeta madre, discos y periféricos.</li>
+                <li>Proteger los componentes contra variaciones eléctricas.</li>
+            </ul>
+
+            <h4>Tipos de fuentes de alimentación</h4>
+            <ul>
+                <li><strong>ATX:</strong> Es la más utilizada en computadoras modernas.</li>
+                <li><strong>Fuentes modulares:</strong> Permiten conectar únicamente los cables necesarios, mejorando la organización interna.</li>
+                <li><strong>Fuentes certificadas:</strong> Incluyen certificaciones como 80 PLUS, que garantizan eficiencia energética.</li>
+            </ul>
+
+            <h4>Importancia</h4>
+            <p>Una fuente de alimentación adecuada mejora:</p>
+            <ul>
+                <li>La estabilidad del sistema.</li>
+                <li>El rendimiento del equipo.</li>
+                <li>La vida útil de los componentes.</li>
+            </ul>
+
+            <h3>3. Ambientes de servicio</h3>
+            <p>Los ambientes de servicio son los diferentes entornos donde se utilizan los sistemas de cómputo y tecnologías informáticas para realizar tareas específicas.</p>
+
+            <h4>Características</h4>
+            <ul>
+                <li>Automatización de procesos.</li>
+                <li>Manejo de grandes cantidades de información.</li>
+                <li>Comunicación rápida y eficiente.</li>
+                <li>Optimización de recursos.</li>
+            </ul>
+
+            <h3>3.1 Industria</h3>
+            <p>En la industria, las computadoras y sistemas digitales se utilizan para controlar procesos de producción y automatización.</p>
+
+            <h4>Aplicaciones en la industria</h4>
+            <ul>
+                <li>Control de maquinaria.</li>
+                <li>Robots industriales.</li>
+                <li>Sistemas de monitoreo.</li>
+                <li>Diseño asistido por computadora (CAD).</li>
+                <li>Manufactura automatizada.</li>
+            </ul>
+
+            <h4>Beneficios</h4>
+            <ul>
+                <li>Mayor precisión.</li>
+                <li>Reducción de errores.</li>
+                <li>Incremento de productividad.</li>
+                <li>Menor tiempo de producción.</li>
+            </ul>
+
+            <h3>3.2 Comercio electrónico</h3>
+            <p>El comercio electrónico consiste en la compra y venta de productos o servicios a través de internet.</p>
+
+            <h4>Características principales</h4>
+            <ul>
+                <li>Disponibilidad las 24 horas.</li>
+                <li>Pagos electrónicos.</li>
+                <li>Acceso desde cualquier lugar.</li>
+                <li>Comunicación inmediata con clientes.</li>
+            </ul>
+
+            <h4>Ejemplos de comercio electrónico</h4>
+            <ul>
+                <li>Tiendas en línea.</li>
+                <li>Plataformas de pago digital.</li>
+                <li>Aplicaciones móviles de compras.</li>
+                <li>Servicios de entrega a domicilio.</li>
+            </ul>
+
+            <h4>Beneficios</h4>
+            <ul>
+                <li>Mayor alcance de clientes.</li>
+                <li>Reducción de costos operativos.</li>
+                <li>Rapidez en transacciones.</li>
+                <li>Facilidad para promocionar productos.</li>
+            </ul>
+            <img src="unidad3.png" alt="Logo de Java" width="700" height="300">
+
+            <button class="btn btn-volver" onclick="mostrarPortada()">Volver al Menú</button>
+        </div>
+
+        <!-- Unidad 4 -->
+        <div id="unidad4" class="unidad">
+            <h2>Unidad 4: Multiprocesadores</h2>
+
+            <h3>4.3 Sistemas de Memoria Compartida: Multiprocesadores</h3>
+            <p>Los sistemas de memoria compartida, también conocidos como multiprocesadores, son computadoras paralelas formadas por varios procesadores conectados entre sí y compartiendo un mismo sistema de memoria. Este tipo de arquitectura permite que
+                varios procesadores trabajen simultáneamente sobre diferentes tareas, mejorando el rendimiento general del sistema.</p>
+
+            <h4>¿Qué es un multiprocesador?</h4>
+            <p>Un multiprocesador es una arquitectura MIMD (Multiple Instruction Multiple Data) donde varios procesadores pueden ejecutar diferentes instrucciones utilizando un espacio de memoria compartido. Todos los procesadores tienen acceso a las mismas
+                direcciones de memoria y pueden comunicarse mediante intercambio de mensajes.</p>
+
+            <h4>Características principales</h4>
+            <ul>
+                <li>Uso de varios procesadores trabajando en paralelo.</li>
+                <li>Memoria compartida entre todos los procesadores.</li>
+                <li>Ejecución simultánea de múltiples tareas.</li>
+                <li>Mayor velocidad de procesamiento.</li>
+                <li>Mejor aprovechamiento de recursos computacionales.</li>
+            </ul>
+
+            <h4>Multiproceso y multitarea</h4>
+            <p>El multiproceso consiste en ejecutar varios procesos al mismo tiempo utilizando múltiples CPUs. La multitarea permite que varios procesos compartan una misma CPU mediante cambios rápidos entre tareas.</p>
+
+            <h3>4.3.1 Redes de Interconexión Dinámicas o Indirectas</h3>
+            <p>Las redes de interconexión permiten la comunicación entre procesadores y memoria dentro de sistemas paralelos. Estas redes pueden clasificarse en estáticas y dinámicas.</p>
+
+            <h4>Redes estáticas</h4>
+            <p>Las redes estáticas tienen una topología fija definida desde la construcción del sistema. Las conexiones no cambian durante el funcionamiento del equipo.</p>
+            <ul>
+                <li>Conexiones permanentes.</li>
+                <li>Topología predefinida.</li>
+                <li>Difíciles de modificar.</li>
+                <li>Adecuadas para tráfico predecible.</li>
+            </ul>
+
+            <h4>Redes dinámicas</h4>
+            <p>Las redes dinámicas permiten modificar la topología durante la ejecución de programas. Utilizan dispositivos llamados switches o conmutadores para dirigir la información.</p>
+            <ul>
+                <li>Mayor flexibilidad.</li>
+                <li>Mejor comunicación entre procesadores y memoria.</li>
+                <li>Mayor eficiencia en sistemas multiprocesadores.</li>
+            </ul>
+
+            <h4>Importancia</h4>
+            <p>En sistemas multiprocesadores, todos los accesos a memoria deben pasar por la red de interconexión, por lo que esta debe ser rápida y eficiente para evitar retrasos.</p>
+
+            <h3>Medio Compartido</h3>
+            <p>En redes de computadoras, el medio compartido permite que varios dispositivos utilicen el mismo canal de comunicación para transmitir información.</p>
+
+            <h4>Ejemplo: ADSL</h4>
+            <p>La tecnología ADSL utiliza una misma línea telefónica para transmitir:</p>
+            <ul>
+                <li>Voz de llamadas telefónicas.</li>
+                <li>Datos de Internet de subida.</li>
+                <li>Datos de Internet de baixada.</li>
+            </ul>
+            <p>Cada tipo de información utiliza diferentes frecuencias para evitar interferencias.</p>
+
+            <h4>Ventajas del medio compartido</h4>
+            <ul>
+                <li>Reduce costos de infraestructura.</li>
+                <li>Permite compartir recursos de comunicación.</li>
+                <li>Facilita la conexión de múltiples dispositivos.</li>
+            </ul>
+
+            <h3>Redes Conmutadas</h3>
+            <p>Las redes conmutadas utilizan dispositivos llamados switches o conmutadores para dirigir paquetes de datos hacia su destino correcto dentro de una red.</p>
+
+            <h4>Funcionamiento</h4>
+            <p>Los switches analizan la dirección de destino de los datos y seleccionan la mejor ruta para enviarlos.</p>
+
+            <h4>Tipos de conmutación</h4>
+            <ul>
+                <li><strong>Conmutación de paquetes:</strong> La información se divide en pequeños paquetes que pueden viajar por diferentes rutas hasta llegar al destino.</li>
+                <li><strong>Conmutación de circuitos:</strong> Se establece una conexión física dedicada entre dos puntos durante toda la comunicación.</li>
+            </ul>
+
+            <h4>Beneficios</h4>
+            <ul>
+                <li>Mayor eficiencia en la transmisión de datos.</li>
+                <li>Reducción de pérdida de información.</li>
+                <li>Mejor administración del tráfico de red.</li>
+                <li>Compartición de recursos en redes locales.</li>
+            </ul>
+
+            <h4>Ejemplos</h4>
+            <ul>
+                <li>Redes Ethernet.</li>
+                <li>Red Telefónica Conmutada (RTC).</li>
+            </ul>
+
+            <h3>Sistemas de Memoria Distribuida</h3>
+            <p>Los sistemas de memoria distribuida están formados por múltiples computadoras independientes conectadas mediante redes de alta velocidad. También son conocidos como clústeres o multicomputadores.</p>
+
+            <h4>Características principales</h4>
+            <ul>
+                <li><strong>Memoria privada:</strong> Cada computadora tiene su propia memoria y no puede acceder directamente a la memoria de otros nodos.</li>
+                <li><strong>Comunicación mediante mensajes:</strong> El intercambio de datos entre nodos se realiza mediante protocolos de red.</li>
+                <li><strong>Escalabilidad:</strong> Es posible aumentar la capacidad del sistema agregando más nodos.</li>
+                <li><strong>Alto rendimiento:</strong> Permiten realizar procesamiento paralelo de grandes cantidades de información.</li>
+            </ul>
+
+            <h4>Ventajas</h4>
+            <ul>
+                <li>Menor costo comparado con supercomputadoras.</li>
+                <li>Mayor capacidad de expansión.</li>
+                <li>Alta disponibilidad y rendimiento.</li>
+            </ul>
+
+            <h3>Redes de Interconexión Estáticas</h3>
+            <p>Las redes de interconexión estáticas son sistemas donde las conexiones entre nodos permanecen fijas durante toda la operación del sistema. También se conocen como redes directas.</p>
+
+            <h4>Características</h4>
+            <ul>
+                <li>Enlaces permanentes.</li>
+                <li>Comunicación directa entre nodos.</li>
+                <li>Baja escalabilidad.</li>
+                <li>Eficientes para tráfico constante y predecible.</li>
+            </ul>
+
+            <h4>Aplicaciones</h4>
+            <ul>
+                <li>Sistemas multiprocesador.</li>
+                <li>Redes paralelas.</li>
+                <li>Arquitecturas de alto rendimiento.</li>
+            </ul>
+            <img src="unidad44.png" alt="Logo de Java" width="700" height="300">
+            <button class="btn btn-volver" onclick="mostrarPortada()">Volver al Menú</button>
+
+        </div>
+
+        <!-- practicas -->
+        <div id="unidad5" class="unidad">
+            <h2>Prácticas del semestre</h2>
+
+            <h3>Estas son todas las practicas que tuvimos durante el semestre:</h3>
+            <p>Durante todas las practicas que tuvimos, aprendimos sobre los conceptos fundamentales de la arquitectura de las computadoras, armamos y desarmamos computadoras, observamos cada pieza y su funcion.
+            </p>
+            <!-- Apartado de Prácticas -->
+            <div class="contenedor-practicas">
+                <h3>📚 Prácticas del Semestre 📚</h3>
+                <p class="descripcion">Descarga las prácticas realizadas durante el semestre: </p>
+
+                <div class="grid-practicas">
+                    <!-- Práctica 1 -->
+                    <div class="tarjeta-practica">
+                        <div class="icono-pdf">📄</div>
+                        <h4>Práctica 1</h4>
+                        <p>"Fotos a los componentes con su descripcion"</p>
+                        <a href="practica uno (1).pdf" download class="btn-descarga">
+                            Descargar PDF practica 1
+                        </a>
+                    </div>
+
+                    <!-- Práctica 2 -->
+                    <div class="tarjeta-practica">
+                        <div class="icono-pdf">📄</div>
+                        <h4>Práctica 2</h4>
+                        <p>"Investigamos los procesadores Intel y Ryzen"</p>
+                        <a href="optimized_practica_dos.pdf" download class="btn-descarga">
+                            Descargar PDF practica 2
+                        </a>
+                    </div>
+
+                    <!-- Práctica 3 -->
+                    <div class="tarjeta-practica">
+                        <div class="icono-pdf">📄</div>
+                        <h4>Práctica 3</h4>
+                        <p>"Desarmamos la ram y tarjeta madre"</p>
+                        <a href="Practica 33.pdf" download class="btn-descarga">
+                            Descargar PDF practica 3
+                        </a>
+                    </div>
+
+                    <!-- Práctica 4 -->
+                    <div class="tarjeta-practica">
+                        <div class="icono-pdf">📄</div>
+                        <h4>Práctica 4</h4>
+                        <p>"Reporte"</p>
+                        <a href="Practica 4.pdf" download class="btn-descarga">
+                            Descarga PDF Practica 4
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-volver" onclick="mostrarPortada()">Volver al Menú</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>David Gonzalez Hernandez - Programación Orientada a Objetos</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
